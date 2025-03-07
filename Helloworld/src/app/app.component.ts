@@ -1,17 +1,33 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';  
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,  
+  imports: [FormsModule],  
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'] 
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  message: string = "Hello from BridgeLabz"; 
+  title = 'Hello from BridgeLabz';  
   logoUrl = 'assets/bridgelabz.png';
+  url = 'https://www.bridgelabz.com';
+  userName = '';  
 
-  openBridgeLabz() {
-    window.open('https://www.bridgelabz.com', '_blank');
+  ngOnInit(): void {
+    this.title = 'Hello from BridgeLabz.';
+  }
+
+  onClick($event: MouseEvent): void {
+    console.log("Save button is clicked!", $event);
+    window.open(this.url, "_blank");
+  }
+
+  updateTitle(): void {
+    if (this.userName) {
+      this.title = `Hello, ${this.userName} from BridgeLabz!`; 
+    } else {
+      this.title = 'Hello from BridgeLabz';  
+    }
   }
 }

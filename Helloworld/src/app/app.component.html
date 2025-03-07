@@ -1,7 +1,9 @@
 <div>
-<h1>{{ message }}</h1> 
-<img [src]="logoUrl" alt="BridgeLabz Logo" (click)="openBridgeLabz()">
-</div> 
+  <h1>{{ title }}</h1>  
 
-<router-outlet></router-outlet>
+  <img [src]="logoUrl" alt="BridgeLabz Logo">
 
+  <input type="text" [(ngModel)]="userName" (input)="updateTitle()" placeholder="Enter your name" />
+
+  <button (click)="onClick($event)">Save</button>
+</div>
