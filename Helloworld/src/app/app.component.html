@@ -3,7 +3,17 @@
 
   <img [src]="logoUrl" alt="BridgeLabz Logo">
 
-  <input type="text" [(ngModel)]="userName" (input)="updateTitle()" placeholder="Enter your name" />
+  <input 
+    type="text" 
+    [(ngModel)]="userName" 
+    (input)="updateTitle()" 
+    placeholder="Enter your name"
+    required
+  />
+
+  <div *ngIf="errorMessage" style="color: red;">
+    {{ errorMessage }}
+  </div>
 
   <button (click)="onClick($event)">Save</button>
 </div>
