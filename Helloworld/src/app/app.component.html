@@ -1,6 +1,6 @@
 <div>
 <h1>{{ message }}</h1> 
-<img [src]=logoUrl alt="BridgeLabz Logo">
+<img [src]="logoUrl" alt="BridgeLabz Logo" (click)="openBridgeLabz()">
 </div> 
 
 <router-outlet></router-outlet>

@@ -10,4 +10,8 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   message: string = "Hello from BridgeLabz"; 
   logoUrl = 'assets/bridgelabz.png';
+
+  openBridgeLabz() {
+    window.open('https://www.bridgelabz.com', '_blank');
+  }
 }
